@@ -1,16 +1,13 @@
 import math
-
-class Circle():
-    def __init__(self, radius):
-        self.radius = radius
-
+class Shape:
+ 
     def S(self):
-        return math.pi * (self.radius ** 2)
+        pass
 
     def P(self):
-        return 2 * math.pi * self.radius
+        pass
 
-class Square():
+class Square(Shape):
     def __init__(self,a):
         self.a = a
 
@@ -20,7 +17,7 @@ class Square():
     def P(self):
         return 4*self.a
 
-class Rectangle():
+class Rectangle(Shape):
      def __init__(self,a, b, c):
         self.a = a
         self.b = b
@@ -32,10 +29,15 @@ class Rectangle():
      def P(self):
         return self.a + self.b + self.c
 
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
 
-circle = Circle(4)
-print("S: ", circle.S())
-print("P: ", circle.P())
+    def S(self):
+        return math.pi * (self.radius ** 2)
+
+    def P(self):
+        return 2 * math.pi * self.radius
 
 square = Square(5)
 print("S: ", square.S())
@@ -44,3 +46,7 @@ print("P: ", square.P())
 rectangle = Rectangle(3,4,5)
 print("S: ", rectangle.S())
 print("P: ", rectangle.P())
+
+circle = Circle(4)
+print("S: ", circle.S())
+print("P: ", circle.P())
